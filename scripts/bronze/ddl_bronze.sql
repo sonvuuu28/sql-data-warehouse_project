@@ -12,11 +12,11 @@ Script Purpose:
 ===============================================================================
 */
 
-IF OBJECT_ID('bronze.crm_cust_info', 'U') IS NOT NULL
-    DROP TABLE bronze.crm_cust_info;
+IF OBJECT_ID('bronze.crm_cst_info', 'U') IS NOT NULL
+    DROP TABLE bronze.crm_cst_info;
 GO
 
-CREATE TABLE bronze.crm_cust_info (
+CREATE TABLE bronze.crm_cst_info (
     cst_id              INT,
     cst_key             NVARCHAR(50),
     cst_firstname       NVARCHAR(50),
@@ -49,7 +49,7 @@ GO
 CREATE TABLE bronze.crm_sales_details (
     sls_ord_num  NVARCHAR(50),
     sls_prd_key  NVARCHAR(50),
-    sls_cust_id  INT,
+    sls_cst_id  INT,
     sls_order_dt INT,
     sls_ship_dt  INT,
     sls_due_dt   INT,
@@ -69,11 +69,11 @@ CREATE TABLE bronze.erp_loc_a101 (
 );
 GO
 
-IF OBJECT_ID('bronze.erp_cust_az12', 'U') IS NOT NULL
-    DROP TABLE bronze.erp_cust_az12;
+IF OBJECT_ID('bronze.erp_cst_az12', 'U') IS NOT NULL
+    DROP TABLE bronze.erp_cst_az12;
 GO
 
-CREATE TABLE bronze.erp_cust_az12 (
+CREATE TABLE bronze.erp_cst_az12 (
     cid    NVARCHAR(50),
     bdate  DATE,
     gen    NVARCHAR(50)
