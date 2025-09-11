@@ -1,4 +1,4 @@
-﻿use DataWarehouse;
+use DataWarehouse;
 go
 
 create or alter procedure silver.load_silver as
@@ -140,11 +140,10 @@ create or alter procedure silver.load_silver as
 			else bdate
 		end as bdate,
 
-		case upper(trim(gen)) 
-			when 'F' then 'Female'
-			when 'M' then 'Male'
-			when '' then 'n/a'
-			else 'n/a'
+		CASE
+			WHEN UPPER(TRIM(gen)) IN ('F', 'FEMALE') THEN 'Female'
+			WHEN UPPER(TRIM(gen)) IN ('M', 'MALE') THEN 'Male'
+			ELSE 'n/a'
 		end as gen
 	from bronze.erp_cst_az12
 
