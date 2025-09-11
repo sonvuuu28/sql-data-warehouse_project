@@ -30,10 +30,10 @@ BEGIN
 		PRINT '------------------------------------------------';
 
 		SET @start_time = GETDATE();
-		PRINT '>> Truncating Table: bronze.crm_cust_info';
-		TRUNCATE TABLE bronze.crm_cust_info;
-		PRINT '>> Inserting Data Into: bronze.crm_cust_info';
-		BULK INSERT bronze.crm_cust_info
+		PRINT '>> Truncating Table: bronze.crm_cst_info';
+		TRUNCATE TABLE bronze.crm_cst_info;
+		PRINT '>> Inserting Data Into: bronze.crm_cst_info';
+		BULK INSERT bronze.crm_cst_info
 		FROM 'D:\Data_WareHouse\source_crm\cust_info.csv'
 		WITH (
 			FIRSTROW = 2,
@@ -95,10 +95,10 @@ BEGIN
 		PRINT '>> -------------';
 
 		SET @start_time = GETDATE();
-		PRINT '>> Truncating Table: bronze.erp_cust_az12';
-		TRUNCATE TABLE bronze.erp_cust_az12;
-		PRINT '>> Inserting Data Into: bronze.erp_cust_az12';
-		BULK INSERT bronze.erp_cust_az12
+		PRINT '>> Truncating Table: bronze.erp_cst_az12';
+		TRUNCATE TABLE bronze.erp_cst_az12;
+		PRINT '>> Inserting Data Into: bronze.erp_cst_az12';
+		BULK INSERT bronze.erp_cst_az12
 		FROM 'D:\Data_WareHouse\source_erp\cust_az12.csv'
 		WITH (
 			FIRSTROW = 2,
